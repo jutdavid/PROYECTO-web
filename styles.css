@@ -1,0 +1,261 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("https://wallpapers.com/images/hd/gradient-color-books-library-b48qto3rvs8x5sy8.jpg"); 
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  color: #1e2a3a;
+}
+
+
+/* ----- Header ----- */
+header {
+  background: #fff;
+  border-bottom: 1px solid #e5eaf3;
+  padding: 10px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1e2a3a;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+nav a:hover {
+  background: #e5eaf3;
+}
+
+#user-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ----- Main ----- */
+main {
+  padding: 16px;
+}
+
+.seccion {
+  display: none;
+}
+
+.seccion.activa {
+  display: block;
+}
+
+/* ----- Grillas de Libros ----- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.libro {
+  background: #fff;
+  border: 1px solid #e5eaf3;
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 160px auto;
+}
+
+.portada {
+  background: #dbe5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.libro .info {
+  padding: 10px;
+  display: grid;
+  gap: 6px;
+}
+
+.badge {
+  background: #eef3ff;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 12px;
+  width: max-content;
+}
+
+/* ----- Botones ----- */
+.btn {
+  background: #2b7cff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(0.95);
+}
+
+/* ----- Detalles y Formularios ----- */
+.detalle {
+  margin-top: 16px;
+  background: #fff;
+  border: 1px solid #e5eaf3;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.narrow {
+  max-width: 380px;
+  background: #fff;
+  padding: 50px;
+  border: 1px solid #e5eaf3;
+  border-radius: 25px;
+}
+
+.campo {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  border: 1px solid #e5eaf3;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* ----- Centrar Login y Registro ----- */
+#login.seccion.activa,
+#signup.seccion.activa {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----- Reseñas ----- */
+.lista-resenas {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.lista-resenas li {
+  border: 1px solid #e5eaf3;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fbfbff;
+}
+
+/* ----- Validaciones ----- */
+.error {
+  color: #b00020;
+  font-size: 12px;
+  min-height: 1em;
+}
+
+input, textarea {
+    width: 100% ;
+    padding: 7px;
+    margin-top: 1px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input.valido, textarea.valido {
+    width: 100% ;
+    padding: 7px;
+    margin-top: 1px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input.invalido, textarea.invalido {
+    width: 100% ;
+    padding: 7px;
+    margin-top: 1px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* Portadas con imagen */
+.portada img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.portada-fallback{
+  background: #dbe5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+}
+
+/* ----- Accesibilidad ----- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 8px;
+  background: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 8px;
+}
+
+
+#inicio h2 {
+  font-size: 2rem;
+  color: #fff; 
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); 
+}
+
+#inicio p {
+  font-size: 1.2rem;
+  color: #fff; 
+  max-width: 500px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
+}
+

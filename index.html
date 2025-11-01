@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Recomendaciones de Libros</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header>
+    <h1>Sistema de Recomendaciones de Libros</h1>
+    <nav>
+      <ul id="main-menu">
+        <li><a href="#" data-section="inicio">Inicio</a></li>
+        <li><a href="#" data-section="catalogo">Catálogo</a></li>
+        <li><a href="#" data-section="recomendaciones">Recomendaciones</a></li>
+        <li><a href="#" data-section="login">Log-in</a></li>
+        <li><a href="#" data-section="signup">Sign-up</a></li>
+      </ul>
+    </nav>
+    <div id="user-box" aria-live="polite">
+      <span id="welcome"></span>
+      <button id="logoutBtn" class="btn" style="display:none;">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- INICIO -->
+    <section id="inicio" class="seccion activa">
+      <h2>Explora y descubre libros</h2>
+      <p>Deja tus reseñas y recibe recomendaciones personalizadas.</p>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section id="catalogo" class="seccion">
+      <h2>Catálogo</h2>
+      <label for="filtroGenero">Filtrar por género:</label>
+      <select id="filtroGenero"></select>
+
+      <div id="catalogoLista" class="grid libros-grid"></div>
+
+      <article id="detalleLibro" class="detalle">
+        <h3>Detalle del libro</h3>
+        <div id="detalleContenido"></div>
+
+        <div id="resenasArea" style="display:none;">
+          <h4>Deja tu reseña</h4>
+          <form id="formResena">
+            <input type="hidden" id="resenaLibroId">
+            <div class="campo">
+              <label for="resenaTexto">Comentario</label>
+              <textarea id="resenaTexto" rows="3" required placeholder="Escribe tu opinión"></textarea>
+            </div>
+            <div class="campo">
+              <label for="resenaPuntaje">Puntaje (1–5)</label>
+              <input id="resenaPuntaje" type="number" min="1" max="5" required>
+            </div>
+            <button class="btn" type="submit">Guardar reseña</button>
+          </form>
+
+          <h4>Reseñas</h4>
+          <ul id="listaResenas" class="lista-resenas"></ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- RECOMENDACIONES -->
+    <section id="recomendaciones" class="seccion">
+      <h2>Tus Recomendaciones</h2>
+      <div id="recomendacionesLista" class="grid libros-grid"></div>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="login" class="seccion">
+      <h2>Acceso de usuarios</h2>
+      <form id="formLogin" class="narrow centrado" novalidate>
+        <div class="campo">
+          <label for="loginEmail">Correo</label>
+          <input id="loginEmail" type="email" required>
+          <small class="error" id="errLoginEmail"></small>
+        </div>
+        <div class="campo">
+          <label for="loginPass">Contraseña</label>
+          <input id="loginPass" type="password" required>
+          <small class="error" id="errLoginPass"></small>
+        </div>
+        <button class="btn" type="submit">Iniciar Sesión</button>
+      </form>
+    </section>
+
+    <!-- REGISTRO -->
+    <section id="signup" class="seccion">
+      <h2>Registro de nuevo usuario</h2>
+      <form id="formSignup" class="narrow centrado" novalidate>
+        <div class="campo">
+          <label for="regNombre">Nombre</label>
+          <input id="regNombre" required>
+          <small class="error" id="errRegNombre"></small>
+        </div>
+        <div class="campo">
+          <label for="regEmail">Correo</label>
+          <input id="regEmail" type="email" required>
+          <small class="error" id="errRegEmail"></small>
+        </div>
+        <div class="campo">
+          <label for="regPass">Contraseña</label>
+          <input id="regPass" type="password" required>
+          <small class="error" id="errRegPass"></small>
+        </div>
+
+        <fieldset class="campo">
+          <legend>Intereses</legend>
+          <label><input type="checkbox" name="interes" value="fantasia"> Fantasía</label>
+          <label><input type="checkbox" name="interes" value="ciencia ficcion"> Ciencia ficción</label>
+          <label><input type="checkbox" name="interes" value="misterio"> Misterio</label>
+          <label><input type="checkbox" name="interes" value="romance"> Romance</label>
+          <label><input type="checkbox" name="interes" value="no ficcion"> No ficción</label>
+          <small class="error" id="errIntereses"></small>
+        </fieldset>
+
+        <button class="btn" type="submit">Crear cuenta</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
